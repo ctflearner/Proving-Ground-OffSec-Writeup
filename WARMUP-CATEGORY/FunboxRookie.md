@@ -1,13 +1,14 @@
-#########################
+```TEXT
 DAY-1 1/8/2022
 PLATFORM: PROVING-GROUND
 PLAY-FUNBOXROOKIE
 TYPE:EASY
 SMALL WRITEUP
-#########################
+```
+
 
 # FunboxRookie
-===============
+
 
 # IP OF THE MACHINE: 192.168.57.107
 
@@ -77,21 +78,21 @@ Nmap done: 1 IP address (1 host up) scanned in 7.15 seconds
 # Note : First Check the Port 80 (Website)
 
 # Port 80 
-====================
+
 VISITING THE WEBSITE
 =====================
 
 ![default-apache-page](https://user-images.githubusercontent.com/98345027/182064150-1e95a223-4d20-4b5a-baf3-05c343f95c5e.png)
 
 
-=======================
+
 CHECKING FOR ROBOTS.TXT
 ========================
 
 ![robots-txt](https://user-images.githubusercontent.com/98345027/182064259-f9152743-b519-485c-8150-cc63b3b18d8f.png)
 
 
-==============
+
 VISITING /LOGS/
 ================
 ![visiting-logs-file](https://user-images.githubusercontent.com/98345027/182064545-6e386414-72ba-4901-ab8e-dcd03b6edad8.png)
