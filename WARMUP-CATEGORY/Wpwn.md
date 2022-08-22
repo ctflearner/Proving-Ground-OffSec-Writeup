@@ -66,7 +66,86 @@ Webpage and source page doesn't reveal anything interesting/sensitive
 ```
 
 
+# Dirbuster
 
+```python
+                                                                                                                                                 
+┌──(dx㉿kali)-[~/Desktop/Proving-ground/Wpwn]
+└─$ dirb http://192.168.89.123/
+
+-----------------
+DIRB v2.22    
+By The Dark Raver
+-----------------
+
+START_TIME: Mon Aug 22 10:59:32 2022
+URL_BASE: http://192.168.89.123/
+WORDLIST_FILES: /usr/share/dirb/wordlists/common.txt
+
+-----------------
+
+GENERATED WORDS: 4612                                                          
+
+---- Scanning URL: http://192.168.89.123/ ----
++ http://192.168.89.123/index.html (CODE:200|SIZE:23)                                                                                           
++ http://192.168.89.123/robots.txt (CODE:200|SIZE:57)                                                                                           
++ http://192.168.89.123/server-status (CODE:403|SIZE:279)                                                                                       
+==> DIRECTORY: http://192.168.89.123/wordpress/                                                                                                 
+                                                                                                                                                
+---- Entering directory: http://192.168.89.123/wordpress/ ----
++ http://192.168.89.123/wordpress/index.php (CODE:301|SIZE:0)                                                                                   
+==> DIRECTORY: http://192.168.89.123/wordpress/wp-admin/                                                                                        
+==> DIRECTORY: http://192.168.89.123/wordpress/wp-content/                                                                                      
+==> DIRECTORY: http://192.168.89.123/wordpress/wp-includes/                                                                                     
++ http://192.168.89.123/wordpress/xmlrpc.php (CODE:405|SIZE:42)                                                                                 
+                                                                                                                                                
+---- Entering directory: http://192.168.89.123/wordpress/wp-admin/ ----
++ http://192.168.89.123/wordpress/wp-admin/admin.php (CODE:302|SIZE:0)                                                                          
+==> DIRECTORY: http://192.168.89.123/wordpress/wp-admin/css/                                                                                    
+==> DIRECTORY: http://192.168.89.123/wordpress/wp-admin/images/                                                                                 
+==> DIRECTORY: http://192.168.89.123/wordpress/wp-admin/includes/                                                                               
++ http://192.168.89.123/wordpress/wp-admin/index.php (CODE:302|SIZE:0)                                                                          
+==> DIRECTORY: http://192.168.89.123/wordpress/wp-admin/js/                                                                                     
+==> DIRECTORY: http://192.168.89.123/wordpress/wp-admin/maint/                                                                                  
+==> DIRECTORY: http://192.168.89.123/wordpress/wp-admin/network/                                                                                
+==> DIRECTORY: http://192.168.89.123/wordpress/wp-admin/user/                                                                                   
+                                                                                                                                                
+---- Entering directory: http://192.168.89.123/wordpress/wp-content/ ----
++ http://192.168.89.123/wordpress/wp-content/index.php (CODE:200|SIZE:0)                                                                        
+==> DIRECTORY: http://192.168.89.123/wordpress/wp-content/plugins/                                                                              
+==> DIRECTORY: http://192.168.89.123/wordpress/wp-content/themes/                                                                               
+==> DIRECTORY: http://192.168.89.123/wordpress/wp-content/upgrade/                                                                              
+==> DIRECTORY: http://192.168.89.123/wordpress/wp-content/uploads/                                                                              
+                                                                                                                                                
+---- Entering directory: http://192.168.89.123/wordpress/wp-includes/ ----
+(!) WARNING: Directory IS LISTABLE. No need to scan it.                        
+    (Use mode '-w' if you want to scan it anyway)
+                                                                                                                                                
+---- Entering directory: http://192.168.89.123/wordpress/wp-admin/css/ ----
+(!) WARNING: Directory IS LISTABLE. No need to scan it.                        
+    (Use mode '-w' if you want to scan it anyway)
+                                                                                                                                                
+---- Entering directory: http://192.168.89.123/wordpress/wp-admin/images/ ----
+(!) WARNING: Directory IS LISTABLE. No need to scan it.                        
+    (Use mode '-w' if you want to scan it anyway)
+                                                                                                                                                
+---- Entering directory: http://192.168.89.123/wordpress/wp-admin/includes/ ----
+(!) WARNING: Directory IS LISTABLE. No need to scan it.                        
+    (Use mode '-w' if you want to scan it anyway)
+                                                                                                                                                
+---- Entering directory: http://192.168.89.123/wordpress/wp-admin/js/ ----
+(!) WARNING: Directory IS LISTABLE. No need to scan it.                        
+    (Use mode '-w' if you want to scan it anyway)
+                                                                                                                                                
+---- Entering directory: http://192.168.89.123/wordpress/wp-admin/maint/ ----
+(!) WARNING: Directory IS LISTABLE. No need to scan it.                        
+    (Use mode '-w' if you want to scan it anyway)
+                                                                                                                                                
+---- Entering directory: http://192.168.89.123/wordpress/wp-admin/network/ ----
++ http://192.168.89.123/wordpress/wp-admin/network/admin.php (CODE:302|SIZE:0)                                                                  
++ http://192.168.89.123/wordpress/wp-admin/network/index.php (CODE:302|SIZE:0)                                                                  
+                                                                               
+```
 
 
 
