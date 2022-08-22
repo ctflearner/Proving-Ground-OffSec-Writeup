@@ -64,3 +64,131 @@ port-22:  OpenSSH 7.9p1 Debian 10+deb10u2 (protocol 2.0
 ```python
 Webpage and source page doesn't reveal anything interesting/sensitive
 ```
+
+
+
+
+
+
+
+
+
+
+
+# WP-SCAN
+
+```PYTHON
+┌──(dx㉿kali)-[~]
+└─$ wpscan --url http://192.168.89.123/wordpress -e ap
+_______________________________________________________________
+         __          _______   _____
+         \ \        / /  __ \ / ____|
+          \ \  /\  / /| |__) | (___   ___  __ _ _ __ ®
+           \ \/  \/ / |  ___/ \___ \ / __|/ _` | '_ \
+            \  /\  /  | |     ____) | (__| (_| | | | |
+             \/  \/   |_|    |_____/ \___|\__,_|_| |_|
+
+         WordPress Security Scanner by the WPScan Team
+                         Version 3.8.22
+                               
+       @_WPScan_, @ethicalhack3r, @erwan_lr, @firefart
+_______________________________________________________________
+
+[i] Updating the Database ...
+[i] Update completed.
+
+[+] URL: http://192.168.89.123/wordpress/ [192.168.89.123]
+[+] Started: Mon Aug 22 11:19:02 2022
+
+Interesting Finding(s):
+
+[+] Headers
+ | Interesting Entry: Server: Apache/2.4.38 (Debian)
+ | Found By: Headers (Passive Detection)
+ | Confidence: 100%
+
+[+] XML-RPC seems to be enabled: http://192.168.89.123/wordpress/xmlrpc.php
+ | Found By: Direct Access (Aggressive Detection)
+ | Confidence: 100%
+ | References:
+ |  - http://codex.wordpress.org/XML-RPC_Pingback_API
+ |  - https://www.rapid7.com/db/modules/auxiliary/scanner/http/wordpress_ghost_scanner/
+ |  - https://www.rapid7.com/db/modules/auxiliary/dos/http/wordpress_xmlrpc_dos/
+ |  - https://www.rapid7.com/db/modules/auxiliary/scanner/http/wordpress_xmlrpc_login/
+ |  - https://www.rapid7.com/db/modules/auxiliary/scanner/http/wordpress_pingback_access/
+
+[+] WordPress readme found: http://192.168.89.123/wordpress/readme.html
+ | Found By: Direct Access (Aggressive Detection)
+ | Confidence: 100%
+
+[+] Upload directory has listing enabled: http://192.168.89.123/wordpress/wp-content/uploads/
+ | Found By: Direct Access (Aggressive Detection)
+ | Confidence: 100%
+
+[+] The external WP-Cron seems to be enabled: http://192.168.89.123/wordpress/wp-cron.php
+ | Found By: Direct Access (Aggressive Detection)
+ | Confidence: 60%
+ | References:
+ |  - https://www.iplocation.net/defend-wordpress-from-ddos
+ |  - https://github.com/wpscanteam/wpscan/issues/1299
+
+[+] WordPress version 5.5 identified (Insecure, released on 2020-08-11).
+ | Found By: Rss Generator (Passive Detection)
+ |  - http://192.168.89.123/wordpress/index.php/feed/, <generator>https://wordpress.org/?v=5.5</generator>
+ |  - http://192.168.89.123/wordpress/index.php/comments/feed/, <generator>https://wordpress.org/?v=5.5</generator>
+
+[+] WordPress theme in use: twentytwenty
+ | Location: http://192.168.89.123/wordpress/wp-content/themes/twentytwenty/
+ | Last Updated: 2022-05-24T00:00:00.000Z
+ | Readme: http://192.168.89.123/wordpress/wp-content/themes/twentytwenty/readme.txt
+ | [!] The version is out of date, the latest version is 2.0
+ | Style URL: http://192.168.89.123/wordpress/wp-content/themes/twentytwenty/style.css?ver=1.5
+ | Style Name: Twenty Twenty
+ | Style URI: https://wordpress.org/themes/twentytwenty/
+ | Description: Our default theme for 2020 is designed to take full advantage of the flexibility of the block editor...
+ | Author: the WordPress team
+ | Author URI: https://wordpress.org/
+ |
+ | Found By: Css Style In Homepage (Passive Detection)
+ |
+ | Version: 1.5 (80% confidence)
+ | Found By: Style (Passive Detection)
+ |  - http://192.168.89.123/wordpress/wp-content/themes/twentytwenty/style.css?ver=1.5, Match: 'Version: 1.5'
+
+[+] Enumerating All Plugins (via Passive Methods)
+[+] Checking Plugin Versions (via Passive and Aggressive Methods)
+
+[i] Plugin(s) Identified:
+
+[+] social-warfare
+ | Location: http://192.168.89.123/wordpress/wp-content/plugins/social-warfare/
+ | Last Updated: 2021-07-20T16:09:00.000Z
+ | [!] The version is out of date, the latest version is 4.3.0
+ |
+ | Found By: Urls In Homepage (Passive Detection)
+ | Confirmed By: Comment (Passive Detection)
+ |
+ | Version: 3.5.2 (100% confidence)
+ | Found By: Comment (Passive Detection)
+ |  - http://192.168.89.123/wordpress/, Match: 'Social Warfare v3.5.2'
+ | Confirmed By:
+ |  Query Parameter (Passive Detection)
+ |   - http://192.168.89.123/wordpress/wp-content/plugins/social-warfare/assets/css/style.min.css?ver=3.5.2
+ |   - http://192.168.89.123/wordpress/wp-content/plugins/social-warfare/assets/js/script.min.js?ver=3.5.2
+ |  Readme - Stable Tag (Aggressive Detection)
+ |   - http://192.168.89.123/wordpress/wp-content/plugins/social-warfare/readme.txt
+ |  Readme - ChangeLog Section (Aggressive Detection)
+ |   - http://192.168.89.123/wordpress/wp-content/plugins/social-warfare/readme.txt
+
+[!] No WPScan API Token given, as a result vulnerability data has not been output.
+[!] You can get a free API token with 25 daily requests by registering at https://wpscan.com/register
+
+[+] Finished: Mon Aug 22 11:19:12 2022
+[+] Requests Done: 49
+[+] Cached Requests: 5
+[+] Data Sent: 11.511 KB
+[+] Data Received: 18.918 MB
+[+] Memory used: 232.605 MB
+[+] Elapsed time: 00:00:09
+
+```
