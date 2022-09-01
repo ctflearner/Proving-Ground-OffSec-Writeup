@@ -152,5 +152,23 @@ Note: Checking the Kernel Version of the target
 ------------------------------------------------------
 itsskv@cybersploit-CTF:~$ uname -a
 Linux cybersploit-CTF 3.13.0-32-generic #57~precise1-Ubuntu SMP Tue Jul 15 03:50:54 UTC 2014 i686 athlon i386 GNU/Linux
+```
+
+# Findings
+```python
+Researching more about the kernel version we get to know that the target is vulnerable to overlayfs local priviledge escalation
+Reference: https://www.exploit-db.com/exploits/37292
+```
+# Searchsploit
+```python
+┌──(dx㉿kali)-[~]
+└─$ searchsploit 3.13.0           
+-------------------------------------------- ---------------------------------
+ Exploit Title                              |  Path
+-------------------------------------------- ---------------------------------
+Linux Kernel 3.13.0 < 3.19 (Ubuntu 12.04/14 | linux/local/37292.c
+Linux Kernel 3.13.0 < 3.19 (Ubuntu 12.04/14 | linux/local/37293.txt
+-------------------------------------------- ---------------------------------
+Shellcodes: No Results
 
 ```
