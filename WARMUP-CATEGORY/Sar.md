@@ -59,8 +59,33 @@ lets try to append in the url: http://192.168.114.35/sar2HTML/
 2. From the Source page we don't fnd anything relevant to the information
 ```
 
-
+# Dirbuster: checking for directory
 ```javascript
+┌──(dx㉿kali)-[~]
+└─$ dirb http://192.168.114.35/
+
+-----------------
+DIRB v2.22    
+By The Dark Raver
+-----------------
+
+START_TIME: Thu Sep  1 01:58:37 2022
+URL_BASE: http://192.168.114.35/
+WORDLIST_FILES: /usr/share/dirb/wordlists/common.txt
+
+-----------------
+
+GENERATED WORDS: 4612                                                          
+
+---- Scanning URL: http://192.168.114.35/ ----
++ http://192.168.114.35/index.html (CODE:200|SIZE:10918)                                                                                        
++ http://192.168.114.35/phpinfo.php (CODE:200|SIZE:95499)                                                                                       
++ http://192.168.114.35/robots.txt (CODE:200|SIZE:9)                                                                                            
++ http://192.168.114.35/server-status (CODE:403|SIZE:279)                                                                                       
+                                                                                                                                                 
+-----------------
+END_TIME: Thu Sep  1 02:13:04 2022
+DOWNLOADED: 4612 - FOUND: 4
 ```
 
 ```javascript
