@@ -80,7 +80,7 @@ cybersploit{youtube.com/c/cybersploit}
 ```
 
 # SSH To a Box
-```javascript
+```python
                                                                               
 ┌──(dx㉿kali)-[~]
 └─$ ssh itsskv@192.168.114.92
@@ -136,5 +136,10 @@ drwxr-xr-x  2 itsskv itsskv  4096 Jun 25  2020 Videos
 -rw-------  1 itsskv itsskv 12288 Jun 26  2020 .xsession-errors
 -rw-------  1 itsskv itsskv 13525 Jun 26  2020 .xsession-errors.old
 itsskv@cybersploit-CTF:~$ 
+```
 
+# Getting a user flag
+```python
+itsskv@cybersploit-CTF:~$ cat local.txt
+d35ac9e5b9cbb7821427eed8fb664da0
 ```
