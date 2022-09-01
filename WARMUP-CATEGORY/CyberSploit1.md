@@ -41,6 +41,9 @@ Service detection performed. Please report any incorrect results at https://nmap
 Nmap done: 1 IP address (1 host up) scanned in 14.43 seconds
 
 ```
+# Navigating to port 80
+
+![webpage-cyberexploit1-provingground](https://user-images.githubusercontent.com/98345027/187831328-7645fb3a-2d59-4654-a305-02985d8561db.png)
 
 
 
