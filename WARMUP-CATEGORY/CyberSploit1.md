@@ -56,8 +56,18 @@ Nmap done: 1 IP address (1 host up) scanned in 14.43 seconds
 From Port-80: It Reaveal username:" username:itsskv--------" in the comment section
 ```
 
+# Visiting the Robots.txt
+![webpage-robots-provingground](https://user-images.githubusercontent.com/98345027/187832073-6f30f5f1-643b-4cce-990f-f55dcfd9dcd9.png)
 
+# Findings from Robots.txt
 ```javascript
+Base64: Y3liZXJzcGxvaXR7eW91dHViZS5jb20vYy9jeWJlcnNwbG9pdH0=
+-----------------------------------------------------------------------------
+After Decoding by the following command
+┌──(dx㉿kali)-[~]
+└─$ echo "Y3liZXJzcGxvaXR7eW91dHViZS5jb20vYy9jeWJlcnNwbG9pdH0=" | base64 -d
+cybersploit{youtube.com/c/cybersploit}                             
+------------------------------------------------------------------------------
 ```
 
 
