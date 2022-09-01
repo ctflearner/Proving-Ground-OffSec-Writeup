@@ -147,7 +147,9 @@ d35ac9e5b9cbb7821427eed8fb664da0
 # Escalation
 ```python
 # Local Enumeration
+------------------------------------------------------
 Note: Checking the Kernel Version of the target
+------------------------------------------------------
 itsskv@cybersploit-CTF:~$ uname -a
 Linux cybersploit-CTF 3.13.0-32-generic #57~precise1-Ubuntu SMP Tue Jul 15 03:50:54 UTC 2014 i686 athlon i386 GNU/Linux
 
