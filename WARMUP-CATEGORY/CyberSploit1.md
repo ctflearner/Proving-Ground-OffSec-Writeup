@@ -70,9 +70,71 @@ cybersploit{youtube.com/c/cybersploit}
 ------------------------------------------------------------------------------
 ```
 
-
-
+# Steps
 ```javascript
+1. Now we got the username: itsskv
+2.After decoding the base64 text we got: cybersploit{youtube.com/c/cybersploit}  
+3.Lets try to ssh to the box by the following command
+4.Command: ssh itsskv@192.168.114.92
+5.And In the Password Section try the above decoded text: cybersploit{youtube.com/c/cybersploit} 
 ```
+
+# SSH To a Box
 ```javascript
+                                                                              
+┌──(dx㉿kali)-[~]
+└─$ ssh itsskv@192.168.114.92
+itsskv@192.168.114.92's password: 
+Welcome to Ubuntu 12.04.5 LTS (GNU/Linux 3.13.0-32-generic i686)
+
+ * Documentation:  https://help.ubuntu.com/
+
+New release '14.04.6 LTS' available.
+Run 'do-release-upgrade' to upgrade to it.
+
+
+Your Hardware Enablement Stack (HWE) is supported until April 2017.
+
+itsskv@cybersploit-CTF:~$ id
+uid=1001(itsskv) gid=1001(itsskv) groups=1001(itsskv)
+itsskv@cybersploit-CTF:~$ whoami
+itsskv
+itsskv@cybersploit-CTF:~$ ls -la
+total 156
+drwxr-xr-x 20 itsskv itsskv  4096 Sep  4  2020 .
+drwxr-xr-x  4 root   root    4096 Jun 25  2020 ..
+-rw-------  1 itsskv itsskv     0 Sep  4  2020 .bash_history
+-rw-r--r--  1 itsskv itsskv   220 Jun 25  2020 .bash_logout
+-rw-r--r--  1 itsskv itsskv  3486 Jun 25  2020 .bashrc
+drwx------ 14 itsskv itsskv  4096 Jun 25  2020 .cache
+drwx------  9 itsskv itsskv  4096 Jun 25  2020 .config
+drwx------  3 itsskv itsskv  4096 Jun 25  2020 .dbus
+drwxr-xr-x  2 itsskv itsskv  4096 Jun 25  2020 Desktop
+-rw-r--r--  1 itsskv itsskv    25 Jun 26  2020 .dmrc
+drwxr-xr-x  2 itsskv itsskv  4096 Jun 25  2020 Documents
+drwxr-xr-x  2 itsskv itsskv  4096 Jun 25  2020 Downloads
+-rw-r--r--  1 itsskv itsskv  8445 Jun 25  2020 examples.desktop
+-rw-rw-r--  1 itsskv itsskv    32 Sep  3  2020 flag2.txt
+drwx------  3 itsskv itsskv  4096 Jun 26  2020 .gconf
+drwx------  4 itsskv itsskv  4096 Jun 25  2020 .gnome2
+-rw-rw-r--  1 itsskv itsskv   142 Jun 26  2020 .gtk-bookmarks
+drwx------  2 itsskv itsskv  4096 Jun 25  2020 .gvfs
+-rw-------  1 itsskv itsskv  1062 Jun 26  2020 .ICEauthority
+drwxr-xr-x  3 itsskv itsskv  4096 Jun 25  2020 .local
+-rw-r--r--  1 itsskv itsskv    33 Sep  1 09:39 local.txt
+drwx------  3 itsskv itsskv  4096 Jun 25  2020 .mission-control
+drwx------  4 itsskv itsskv  4096 Jun 25  2020 .mozilla
+drwxr-xr-x  2 itsskv itsskv  4096 Jun 25  2020 Music
+drwxr-xr-x  2 itsskv itsskv  4096 Jun 25  2020 Pictures
+-rw-r--r--  1 itsskv itsskv   675 Jun 25  2020 .profile
+drwxr-xr-x  2 itsskv itsskv  4096 Jun 25  2020 Public
+drwx------  2 itsskv itsskv  4096 Jun 26  2020 .pulse
+-rw-------  1 itsskv itsskv   256 Jun 25  2020 .pulse-cookie
+drwxr-xr-x  2 itsskv itsskv  4096 Jun 25  2020 Templates
+drwxr-xr-x  2 itsskv itsskv  4096 Jun 25  2020 Videos
+-rw-------  1 itsskv itsskv     0 Jun 26  2020 .Xauthority
+-rw-------  1 itsskv itsskv 12288 Jun 26  2020 .xsession-errors
+-rw-------  1 itsskv itsskv 13525 Jun 26  2020 .xsession-errors.old
+itsskv@cybersploit-CTF:~$ 
+
 ```
