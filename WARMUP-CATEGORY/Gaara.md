@@ -81,7 +81,7 @@ GENERATED WORDS: 4612
 2. It seems that username is "gaara"
 ```
 
-# Navigating To Port:21
+# Navigating To Port:22
 
 ## Exploitation
 
@@ -111,7 +111,7 @@ Hydra (https://github.com/vanhauser-thc/thc-hydra) starting at 2022-09-04 01:08:
 [ERROR] 0 target did not complete
 Hydra (https://github.com/vanhauser-thc/thc-hydra) finished at 2022-09-04 01:10:16
 ```
-###  FINDINGS-PORT:21
+###  FINDINGS-PORT:22
 
 ```javascript
 1. For username gaara we found the password: iloveyou2
