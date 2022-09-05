@@ -431,7 +431,7 @@ DATABASE USER:root
 password: rootpassword
 ```
 
-### MYSQL 
+### MYSQL ENUMERATION
 ```python
 using the discovered credentials, we can now see what is inside the local database. Let's list the available tables inside the wordpress database:
 ```
