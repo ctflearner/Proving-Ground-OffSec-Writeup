@@ -84,9 +84,7 @@ Navigating to website
 
 ![BTRSys-webpage-wordpress-proving-ground](https://user-images.githubusercontent.com/98345027/188357830-5fd7c6ab-1ca1-42d9-b395-333ca9a2d814.png)
 
-### Dirb
-```javascript
-```
+
 
 ### WpScan
 ```javascript
