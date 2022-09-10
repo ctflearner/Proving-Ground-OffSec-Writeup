@@ -13,3 +13,4 @@
 |7   |OnSystemShellDredd  |[Link](https://github.com/ctflearner/Proving-Ground-OffSec-Writeup/blob/main/WARMUP-CATEGORY/OnSystemShellDredd.md)|
 |8   |SunsetNoontide     |[Link](https://github.com/ctflearner/Proving-Ground-OffSec-Writeup/blob/main/WARMUP-CATEGORY/SunsetNoontide.md)    |
 |9   |BBScute            |[Link](https://github.com/ctflearner/Proving-Ground-OffSec-Writeup/blob/main/WARMUP-CATEGORY/BBSCute.md)|
+|10  |Sar                |[Link](https://github.com/ctflearner/Proving-Ground-OffSec-Writeup/blob/main/WARMUP-CATEGORY/Sar.md)|
