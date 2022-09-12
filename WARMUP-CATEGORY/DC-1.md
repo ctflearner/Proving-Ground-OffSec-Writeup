@@ -162,7 +162,7 @@ Disallow: /?q=user/logout/
     Default admin - http://192.168.103.193/user/login
 
 ```
-`` WE can see from droopescan that there is possible version of drupal , we'll use Searchsploit to look for any publicly available exploits for Drupal 7.x
+`` WE can see from droopescan that there is possible version of drupal , we'll use Searchsploit to look for any publicly available exploits for Drupal 7.x ``
 ```javascript
 ┌──(dx㉿kali)-[~]
 └─$ searchsploit drupal " < 7.31 "
