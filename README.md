@@ -15,3 +15,7 @@
 |9   |BBScute            |[Link](https://github.com/ctflearner/Proving-Ground-OffSec-Writeup/blob/main/WARMUP-CATEGORY/BBSCute.md)|
 |10  |Sar                |[Link](https://github.com/ctflearner/Proving-Ground-OffSec-Writeup/blob/main/WARMUP-CATEGORY/Sar.md)|
 |11  |DC-1               |[Link](https://github.com/ctflearner/Proving-Ground-OffSec-Writeup/blob/main/WARMUP-CATEGORY/DC-1.md)|
+
+# Intermediate
+|S.No| Date | Name of the box  | Link |
+|----|-----|-------------------|------|
